@@ -11,7 +11,7 @@ router.route('/register')
 
 router.route('/login')
     .get(users.renderLogin)
-    // The inner methodss and middleware are a part of passport
+    // The inner methods and middleware are a part of passport
     .post(passport.authenticate('local',{failureFlash:true , failureRedirect:'/login'}),users.login)
 
 router.get('/logout',users.logout)
