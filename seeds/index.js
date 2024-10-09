@@ -1,7 +1,7 @@
 // here we will make a seed database
 const mongoose = require('mongoose')
 const CampGround = require('../models/campground')
-const Indiancities = require('./Indiancities')
+const cities = require('./cities')
 const {descriptors , places} = require('./seedHelpers')
 const axios = require('axios').default;
 
@@ -38,9 +38,9 @@ const seedDB = async()=>{
         const random = Math.floor(Math.random()*400);
         const pc = Math.floor(Math.random()*20);
         const camp = new CampGround({
-            author:"633185baadc5ee209b207937",
+            author:"6706e17f5c05077c3e684d5e",
             price:pc,
-            location:`${Indiancities[random].city}, ${Indiancities[random].state}`,
+            location:`${cities[random].city}, ${cities[random].state}`,
             title:`${sample(descriptors)} ${sample(places)}`,
             images: [
                 {
@@ -48,7 +48,7 @@ const seedDB = async()=>{
                     filename: 'YelpCamp/saelevnipd0fpqqmbxpi'
                 },
               ],
-            geometry:{ type: 'Point', coordinates: [Indiancities[random].lng,Indiancities[random].lat  ] }
+            geometry:{ type: 'Point', coordinates: [cities[random].longitude,cities[random].latitude  ] }
 
         })
         await camp.save()
