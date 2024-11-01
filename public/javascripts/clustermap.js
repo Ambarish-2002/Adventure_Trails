@@ -4,9 +4,9 @@ mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
 container: 'map',
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-style: 'mapbox://styles/mapbox/light-v10',
-center: [77.906693, 23.537680],
-zoom: 4
+style: 'mapbox://styles/mapbox/streets-v12',
+center: [-118.285969, 34.021588],
+zoom: 15.05
 });
  
 map.on('load', () => {
@@ -67,19 +67,44 @@ layout: {
 }
 });
  
-map.addLayer({
-id: 'unclustered-point',
-type: 'circle',
-source: 'campgrounds',
-filter: ['!', ['has', 'point_count']],
-paint: {
-'circle-color': '#1363DF',
-'circle-radius': 8,
-'circle-stroke-width': 1,
-'circle-stroke-color': '#fff'
-}
-});
+// map.addLayer({
+// id: 'unclustered-point',
+// type: 'circle',
+// source: 'campgrounds',
+// filter: ['!', ['has', 'point_count']],
+// paint: {
+// 'circle-color': '#ED0909',
+// 'circle-radius': 8,
+// 'circle-stroke-width': 1,
+// 'circle-stroke-color': '#fff'
+// }
+// });
  
+map.addLayer({
+    id: 'unclustered-point',
+    type: 'circle',
+    source: 'campgrounds',
+    filter: ['!', ['has', 'point_count']],
+    paint: {
+      // Cardinal Red for the circles
+      'circle-color': '#990000',
+      // Adjust the radius dynamically based on zoom level for better visibility
+      'circle-radius': [
+        'interpolate',
+        ['linear'],
+        ['zoom'],
+        8, 6,   // Small circles at zoom level 10
+        10, 8   // Larger circles at zoom level 15
+      ],
+      // Add a gold stroke around the circles
+      'circle-stroke-width': 2,
+      'circle-stroke-color': '#FFCC00', // Gold stroke color
+      // Optionally, add a subtle circle opacity for better effect
+      'circle-opacity': 1.0
+    }
+  });
+
+  
 // inspect a cluster on click
 map.on('click', 'clusters', (e) => {
 const features = map.queryRenderedFeatures(e.point, {

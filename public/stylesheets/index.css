@@ -1,0 +1,22 @@
+/* USC color text for the heading */
+.usc-text {
+    color: #990000; /* USC Cardinal Red */
+    font-weight: bold;
+}
+
+/* USC border style for cards */
+.usc-card {
+    border: 2px solid #990000; /* USC Cardinal Red border */
+    border-radius: 10px;
+}
+
+/* Optional: Add USC colors to the buttons */
+.btn-primary {
+    background-color: #990000; /* USC Cardinal Red */
+    border-color: #990000;
+}
+
+.btn-primary:hover {
+    background-color: #FFCC00; /* USC Gold */
+    border-color: #FFCC00;
+}

@@ -1,0 +1,37 @@
+/* Navbar Styles */
+.navbar {
+    background-color: #A50034; /* USC Cardinal */
+}
+
+.navbar-brand {
+    color: #FFD100; /* USC Gold */
+    font-weight: bold; /* Bold for emphasis */
+}
+
+.navbar-brand:hover {
+    color: #FFDD50; /* Lighter shade of gold on hover */
+}
+
+.nav-link {
+    color: #FFD100; /* USC Gold */
+}
+
+.nav-link:hover {
+    color: #FFDD50; /* Lighter shade of gold on hover */
+}
+
+.navbar .nav-link.active {
+    color: #FFD100; /* USC Gold */
+    font-weight: bold; /* Bold active link */
+    border-bottom: 2px solid #FFDD50; /* Gold underline for active link */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #A50034; /* USC Cardinal */
+    color: #FFD100; /* USC Gold for footer text */
+}
+
+.footer .text-muted {
+    color: rgba(255, 255, 255, 0.7); /* Slightly muted white for contrast */
+}

@@ -1,7 +1,7 @@
 // here we will make a seed database
 const mongoose = require('mongoose')
 const CampGround = require('../models/campground')
-const cities = require('./cities')
+const cities = require('./usc')
 const {descriptors , places} = require('./seedHelpers')
 const axios = require('axios').default;
 
@@ -33,22 +33,22 @@ const campimg = async ()=>{
 
 const seedDB = async()=>{
    await CampGround.deleteMany({});
-   for(let i =0;i<400;i++)
+   for(let i =0;i<20;i++)
    {    //let imgs = await campimg();
-        const random = Math.floor(Math.random()*400);
+        // const random = Math.floor(Math.random()*20);
         const pc = Math.floor(Math.random()*20);
         const camp = new CampGround({
             author:"6706e17f5c05077c3e684d5e",
             price:pc,
-            location:`${cities[random].city}, ${cities[random].state}`,
-            title:`${sample(descriptors)} ${sample(places)}`,
+            location:`${cities[i].city}, ${cities[i].state}`,
+            title:`${cities[i].name}`,
             images: [
                 {
                     url: 'https://res.cloudinary.com/difv6zjz0/image/upload/v1664374442/YelpCamp/saelevnipd0fpqqmbxpi.jpg',
                     filename: 'YelpCamp/saelevnipd0fpqqmbxpi'
                 },
               ],
-            geometry:{ type: 'Point', coordinates: [cities[random].longitude,cities[random].latitude  ] }
+            geometry:{ type: 'Point', coordinates: [cities[i].longitude,cities[i].latitude  ] }
 
         })
         await camp.save()

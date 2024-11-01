@@ -2,9 +2,9 @@
 mapboxgl.accessToken= mapToken;
 const map = new mapboxgl.Map({
 container: 'map', // container ID
-style: 'mapbox://styles/mapbox/light-v10', // style URL
+style: 'mapbox://styles/mapbox/streets-v12', // style URL
 center: cd.geometry.coordinates, // starting position [lng, lat]
-zoom: 8, // starting zoom
+zoom: 15.05, // starting zoom
 projection: 'globe' // display the map as a 3D globe
 });
 map.on('style.load', () => {
