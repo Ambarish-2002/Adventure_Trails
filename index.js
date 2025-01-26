@@ -1,6 +1,6 @@
 // Code by Ambarish Kshirsagar
-// GitHub :-
-// Linkedin :-
+// GitHub :- https://github.com/Ambarish-2002
+// Linkedin :- https://www.linkedin.com/in/ambarishkshirsagar/
 
 //Environt variables to hide API keys
 if(process.env.NODE_ENV!=='production'){
