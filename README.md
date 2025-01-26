@@ -31,3 +31,23 @@ To run the project locally, ensure you have the following:
    ```bash
    git clone https://github.com/your-username/adventure-trails.git
    cd adventure-trails
+
+### Pages
+
+HOME
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/66a42f1a-12b3-4bcd-b38e-5a2343b99ea9" />
+
+---
+LOGIN
+<img width="1263" alt="image" src="https://github.com/user-attachments/assets/826496fd-745e-4785-bddd-1563c73603b3" />
+
+---
+ADD TRAIL
+<img width="1221" alt="image" src="https://github.com/user-attachments/assets/27a02f6c-857f-4b32-9441-b9ee43230ccf" />
+
+---
+Interactive Map
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/0d7aa09d-90f3-4015-bf09-842f72ae3519" />
+
+
+
